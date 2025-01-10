@@ -441,8 +441,17 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  const newArray = arr.filter(
+    (element) =>
+      element === 0 ||
+      element === false ||
+      element === null ||
+      element === '' ||
+      element === undefined ||
+      Number.isNaN(element)
+  );
+  return newArray.length;
 }
 
 /**
